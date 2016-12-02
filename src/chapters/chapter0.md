@@ -8,6 +8,10 @@ To get started you'll need the following pre-requisites:
 * [Visual Studio 2015](https://visualstudio.com/)
 * TFS Repository 
 
+### Final code
+
+You can find the final code repo for this quick start on [GitHub](https://github.com/mikebranstein/mvc-quickstart). 
+
 ### About ASP.NET MVC and MVC Architecture
 
 ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that enables a clean separation of concerns and that gives you full control over markup for enjoyable, agile development. ASP.NET MVC includes many features that enable fast, TDD-friendly development for creating sophisticated applications that use the latest web standards.
