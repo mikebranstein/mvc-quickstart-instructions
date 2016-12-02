@@ -16,7 +16,7 @@
 <div id="container">
 	<div id="header">
 		<a href="#" class="menu header-btn" id="toggle-toc"></a>
-		<h1>NativeScript Workshop</h1>
+		<h1>MVC Quick Start</h1>
 		<a href="https://github.com/mikebranstein/mvc-quickstart-instructions" class="github header-btn"></a>
 	</div>
 
@@ -70,8 +70,51 @@ In small applications, the model is often a conceptual separation instead of a p
 <h3 id="materials">Materials</h3>
 <p>You can find additional lab materials and presentation content at the locations below:</p>
 <h3 id="where-to-learn-more">Where to learn more</h3>
+<p>No content here yet...</p>
 <h3 id="inspirations">Inspirations</h3>
 <p>Our team creates a lot of MVC projects, and we have a very specific way of doing this, so this is our unofficial team documentation.</p>
+
+			</div>
+			<hr>
+			<div class="chapter">
+				<h2 id="nuget-and-source-control">NuGet and Source Control</h2>
+<p>You shouldn&#39;t source control NuGet packages, but configuring this correctly in TFS can be confusing. This section shows how to do this.</p>
+<h3 id="add-nuget-config-file">Add NuGet.config file</h3>
+<p>First, we&#39;ll need to create a nuget.config file that disabled nuget source control integration. This will go into a folder named <code>.nuget</code> in the base of your branch.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Add a nuget.config file to your repository
+</h4>
+
+<p>Add a <code>.nuget</code> folder to the base of your repository.</p>
+<p>After adding the <code>.nuget</code> folder, add a file named <code>nuget.config</code> to the folder. Add the following to the file:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration&gt;
+  &lt;solution&gt;
+    &lt;add key=&quot;disableSourceControlIntegration&quot; value=&quot;true&quot; /&gt;
+  &lt;/solution&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>Commit this to your source control repository.</p>
+<div class="exercise-end"></div>
+
+<h3 id="ignoring-nuget-packages-in-source-control">Ignoring NuGet packages in source control</h3>
+<p>Next, we need to add a <code>.tfignore</code> file to the root of your branch. </p>
+<blockquote>
+<p>The <code>.tfignore</code> files is a file that tells TFS which files and fodlers should be excluded from source control.</p>
+</blockquote>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Add a .tfingore file 
+</h4>
+
+<p>Add a <code>.tfignore</code> file to the base of your repository.</p>
+<p>Add the following to the file:</p>
+<pre><code>\packages
+!\packages\repositories.config
+</code></pre><p>This file tells TFS to ignore the contents of the folder named <code>\packages</code>, but to include the repositories.config file. </p>
+<p>The repositories.config file includes special information about your NuGet packages repositories. Not all projects need this file, but we add it to the inclusion list just in case your project needs it.</p>
+<p>Commit this to your source control repository.</p>
+<div class="exercise-end"></div>
+
 
 			</div>
 			<hr>
