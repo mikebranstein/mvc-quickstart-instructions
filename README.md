@@ -1,6 +1,6 @@
 # Quick Start Guide Template
 
-This is a template for building quick start guides. To view this repository online visit [https://mikebranstein.github.io/nativescript-workshop-instructions](https://mikebranstein.github.io/nativescript-workshop-instructions).
+This is a template for building quick start guides. To view this repository online visit [https://mikebranstein.github.io/mvc-quickstart-instructions](https://mikebranstein.github.io/mvc-quickstart-instructions).
 
 ## Setup
 
